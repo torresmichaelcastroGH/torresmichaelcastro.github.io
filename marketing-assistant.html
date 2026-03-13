@@ -59,8 +59,40 @@ footer {
   width: 100%;
   box-sizing: border-box;
 }
+
+  #lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
 </style>
 </head>
+  <div id="lightbox" onclick="closeImage()">
+  <img id="lightbox-img">
+</div>
+
+<script>
+function openImage(img) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = img.src;
+}
+
+function closeImage() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 <body>
 
 <a href="index.html" class="back-link">&larr; Back to Home</a>
@@ -72,23 +104,27 @@ footer {
 <section>
   <h2>Graphic Design</h2>
   <p>Description and samples of graphic design projects.</p>
-  <img src="images/graphic1.jpg" alt="Graphic Design Example" class="project-img" />
-  <img src="images/graphic2.jpg" alt="Graphic Design Example" class="project-img" />
-  <img src="images/graphic3.jpg" alt="Graphic Design Example" class="project-img" />
-  <img src="images/graphic4.jpg" alt="Graphic Design Example" class="project-img" />
+  <img src="images/graphic1.jpg" alt="Graphic Design Example" class="project-img" onclick="openImage(this)">
+  <img src="images/graphic2.jpg" alt="Graphic Design Example" class="project-img" onclick="openImage(this)">
+  <img src="images/graphic3.jpg" alt="Graphic Design Example" class="project-img" onclick="openImage(this)">
+  <img src="images/graphic4.jpg" alt="Graphic Design Example" class="project-img" onclick="openImage(this)">
 </section>
 
 <section>
   <h2>Social Media Management</h2>
-  <img src="images/social-media.jpg" alt="Social Media Management Example" class="project-img" />
   <p>Description and examples of social media campaigns managed.</p>
+  <img src="images/smm1.jpg" alt="Social Media Management Example" class="project-img" onclick="openImage(this)">
+  <img src="images/smm2.jpg" alt="Social Media Management Example" class="project-img" onclick="openImage(this)">
+  <img src="images/smm3.jpg" alt="Social Media Management Example" class="project-img" onclick="openImage(this)">
 </section>
 
 <section>
   <h2>Print Layout Collaterals</h2>
   <p>Details about print design and layout projects.</p>
-  <img src="images/printlayout1.jpg" alt="Print Layout Example" class="project-img" />
-  <img src="images/printlayout2.jpg" alt="Print Layout Example" class="project-img" />
+  <img src="images/printlayout1.jpg" alt="Print Layout Example" class="project-img" onclick="openImage(this)">
+  <img src="images/printlayout2.jpg" alt="Print Layout Example" class="project-img" onclick="openImage(this)">
+  <img src="images/printlayout3.jpg" alt="Print Layout Example" class="project-img" onclick="openImage(this)">
+  <img src="images/printlayout4.jpg" alt="Print Layout Example" class="project-img" onclick="openImage(this)">
 </section>
 <footer>
   <p>© 2026 Michael C. Torres - All rights reserved</p>
